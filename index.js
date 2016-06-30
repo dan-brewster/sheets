@@ -19,12 +19,6 @@ server.route({
   method: 'GET',
   path: '/{name}',
   handler: function(request, reply) {
-    process.argv.forEach(function (val, index, array) {
-      console.log(index + ': ' + val);
-    });
-
-    console.log('hello there');
-    console.log(process.env);
     var connection = mysql.createConnection({ host: process.env.RDS_DB_HOST, user: process.env.RDS_DB_USER, password: process.env.RDS_DB_PASS, port: 3306, database: 'sheets' });
     connection.connect();
     connection.query('SELECT 1+1 AS solution', function (err, rows, fields) {
