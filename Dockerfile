@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . /usr/src/app
 
-RUN ./secrets-loader.sh
-
 EXPOSE 3000
-CMD ["node", "index.js"]
+
+CMD ["/secrets-loader.sh"]
+
