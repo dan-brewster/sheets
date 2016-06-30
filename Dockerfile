@@ -10,5 +10,5 @@ COPY . /usr/src/app
 
 EXPOSE 3000
 
-CMD ["/secrets-loader.sh"]
+CMD ["node", "index.js"]
 
